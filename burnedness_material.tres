@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cg1owrdxoikjc"]
+
+[ext_resource type="Shader" uid="uid://dxgsj6k8s30od" path="res://burnedness.gdshader" id="1_i5uq3"]
+
+[sub_resource type="Gradient" id="Gradient_mnffq"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.12191781, 0.3657534, 0.54657537, 0.6561644, 0.760274, 0.8643836, 1.12)
+colors = PackedColorArray(1, 1, 1, 1, 0.72156864, 0.8352941, 0.9607843, 1, 0.23529412, 1, 0.30980393, 1, 1, 1, 0.19607843, 1, 0.84313726, 0.4392157, 0, 1, 1, 0.07450981, 0, 1, 0.3506754, 0.070809454, 0.070809454, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mnffq"]
+gradient = SubResource("Gradient_mnffq")
+width = 32
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_i5uq3")
+shader_parameter/color_map = SubResource("GradientTexture1D_mnffq")

@@ -1,0 +1,369 @@
+[gd_scene format=3 uid="uid://p5fi8xlfafye"]
+
+[ext_resource type="Texture2D" uid="uid://dns0pnadcpiyd" path="res://realistic-burning-fire-flames-burning-hot-sparks-realistic-fire-flame-fire-flames-effect-png-1640515909.png" id="1_2qgwk"]
+[ext_resource type="Script" uid="uid://col2nc4au1ftt" path="res://tofu.gd" id="1_73qfq"]
+[ext_resource type="Texture2D" uid="uid://xuym1ma3ieyq" path="res://boom.png" id="2_ekgp7"]
+[ext_resource type="Script" uid="uid://bt135pxtoki8w" path="res://boom.gd" id="3_0t82s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekgp7"]
+albedo_texture = ExtResource("1_2qgwk")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.1
+bottom_radius = 0.1
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_73qfq"]
+radius = 0.347
+height = 1.184
+radial_segments = 7
+rings = 1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0t82s"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ekgp7"]
+noise = SubResource("FastNoiseLite_0t82s")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2qgwk"]
+albedo_color = Color(0.1893278, 0.18932778, 0.1893278, 1)
+metallic = 1.0
+roughness_texture = SubResource("NoiseTexture2D_ekgp7")
+
+[sub_resource type="BoxMesh" id="BoxMesh_kh1cf"]
+material = SubResource("StandardMaterial3D_2qgwk")
+flip_faces = true
+size = Vector3(3.885, 0.715, 5.04)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0t82s"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73qfq"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnffq"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0ks4"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfh8v"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3jiu"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixqst"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewyyr"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8n8us"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcevb"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(384, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_db7yp"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66ydc"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dduwq"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5j1t"]
+atlas = ExtResource("2_ekgp7")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0t82s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73qfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnffq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0ks4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfh8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3jiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixqst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewyyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8n8us")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcevb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_db7yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66ydc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dduwq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_g5j1t")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kh1cf"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_2qgwk"]
+sky_material = SubResource("ProceduralSkyMaterial_kh1cf")
+
+[sub_resource type="Environment" id="Environment_ekgp7"]
+background_mode = 2
+sky = SubResource("Sky_2qgwk")
+glow_enabled = true
+
+[sub_resource type="Animation" id="Animation_kh1cf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("stick:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("grill/very-realistic-flame:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("grill/very-realistic-flame:offset:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("grill/OmniLight3D:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("grill/OmniLight3D:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.66058624, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("grill/OmniLight3D:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_2qgwk"]
+resource_name = "rotating_tofu"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("stick:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5707964), Vector3(6.2831855, 0, -1.5707964)]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("grill/very-realistic-flame:offset:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(4.5, -0.25, 0, 0.7, 20.5, 98.5, -0.25, 0, 0.25, 0, -72.5, -0.70000076, 14, 0, 0, 4.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.8333333, 7.1, 10)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("grill/very-realistic-flame:offset:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -28.5, -5.3333335, 101, 0, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 6.733333, 10)
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D/AnimatedSprite3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(9.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"boom"
+}]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("grill/OmniLight3D:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.5776423, -0.25, 0, 0.25, 0, -0.7153146, -0.25, 0, 0.25, 0, 0.1939645, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.4333334, 5.4666667, 9.1, 10)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("grill/OmniLight3D:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.66058624, -0.25, 0, 0.25, 0, 0.50019413, -0.25, 0, 0.25, 0, 0.31335193, -0.25, 0, 0.25, 0, -0.18501115, -0.25, 0, 0.25, 0, 0.66058624, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.5333333, 6.1, 8.766666, 10)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("grill/OmniLight3D:position:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.07972109, -0.25, 0, 0.25, 0, -0.043937378, -0.25, 0, 0.25, 0, -0.006868533, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.1666667, 5.866667, 9.366667, 10)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ekgp7"]
+_data = {
+&"RESET": SubResource("Animation_kh1cf"),
+&"rotating_tofu": SubResource("Animation_2qgwk")
+}
+
+[node name="tofu scene" type="Node3D" unique_id=1543253208]
+
+[node name="stick" type="MeshInstance3D" parent="." unique_id=1451525506]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 1.5423484, 0)
+material_override = SubResource("StandardMaterial3D_ekgp7")
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="tofu" type="MeshInstance3D" parent="stick" unique_id=94839749]
+transform = Transform3D(0.96993643, -0.1388535, 0.19985755, 0.19164474, 0.94196403, -0.27563736, -0.14998542, 0.30565238, 0.9402558, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_73qfq")
+script = ExtResource("1_73qfq")
+
+[node name="grill" type="MeshInstance3D" parent="." unique_id=1589908797]
+mesh = SubResource("BoxMesh_kh1cf")
+
+[node name="very-realistic-flame" type="Sprite3D" parent="grill" unique_id=71213640]
+transform = Transform3D(0.17587769, 0, 0, 0, 0.17587769, 0, 0, 0, 0.17587769, 0, 0, 0)
+texture = ExtResource("1_2qgwk")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="grill" unique_id=1430295572]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66058624, 0)
+light_color = Color(1, 0.9843137, 0.5411765, 1)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=594301308]
+transform = Transform3D(-0.939095, 0.030222273, 0.34232613, 0, 0.9961255, -0.087942965, -0.34365764, -0.0825868, -0.9354565, 0.85429287, 0.6117928, -2.4833934)
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Camera3D" unique_id=1856529281]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8626451e-08, 0, -0.7426234)
+pixel_size = 0.0151
+billboard = 1
+shaded = true
+no_depth_test = true
+fixed_size = true
+alpha_cut = 1
+texture_filter = 0
+render_priority = 127
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+script = ExtResource("3_0t82s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=178197799]
+environment = SubResource("Environment_ekgp7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1836003556]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1216923407]
+libraries/ = SubResource("AnimationLibrary_ekgp7")
+autoplay = &"rotating_tofu"
