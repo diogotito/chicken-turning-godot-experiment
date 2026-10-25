@@ -344,7 +344,6 @@ light_color = Color(1, 0.9843137, 0.5411765, 1)
 transform = Transform3D(-0.939095, 0.030222273, 0.34232613, 0, 0.9961255, -0.087942965, -0.34365764, -0.0825868, -0.9354565, 0.85429287, 0.6117928, -2.4833934)
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Camera3D" unique_id=1856529281]
-process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8626451e-08, 0, -0.7426234)
 pixel_size = 0.0151
 billboard = 1
