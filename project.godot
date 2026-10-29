@@ -13,7 +13,7 @@ config_version=5
 config/name="chicken-turning experiment"
 run/main_scene="uid://p5fi8xlfafye"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dns0pnadcpiyd"
 
 [debug_draw_3d]
 

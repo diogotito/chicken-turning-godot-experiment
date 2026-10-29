@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://col2nc4au1ftt" path="res://tofu.gd" id="1_73qfq"]
 [ext_resource type="Texture2D" uid="uid://xuym1ma3ieyq" path="res://boom.png" id="2_ekgp7"]
 [ext_resource type="Script" uid="uid://bt135pxtoki8w" path="res://boom.gd" id="3_0t82s"]
+[ext_resource type="AudioStream" uid="uid://cnfgnwireavd2" path="res://dragon-studio-massive-explosion-3-397984.mp3" id="5_mnffq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekgp7"]
 albedo_texture = ExtResource("1_2qgwk")
@@ -92,49 +93,49 @@ region = Rect2(288, 192, 96, 96)
 [sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.2,
 "texture": null
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_0t82s")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_73qfq")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_mnffq")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_f0ks4")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_kfh8v")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_d3jiu")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_ixqst")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_ewyyr")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_8n8us")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_pcevb")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_db7yp")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_66ydc")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": SubResource("AtlasTexture_dduwq")
 }, {
-"duration": 2.0,
+"duration": 1.4,
 "texture": SubResource("AtlasTexture_g5j1t")
 }],
 "loop": 0,
@@ -269,7 +270,7 @@ tracks/3/path = NodePath("Camera3D/AnimatedSprite3D")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(9.1),
+"times": PackedFloat32Array(8.7),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -309,6 +310,21 @@ tracks/6/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.07972109, -0.25, 0, 0.25, 0, -0.043937378, -0.25, 0, 0.25, 0, -0.006868533, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 2.1666667, 5.866667, 9.366667, 10)
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera3D/boom")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_mnffq")
+}],
+"times": PackedFloat32Array(8.866667)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ekgp7"]
 _data = {
@@ -343,23 +359,24 @@ light_color = Color(1, 0.9843137, 0.5411765, 1)
 [node name="Camera3D" type="Camera3D" parent="." unique_id=594301308]
 transform = Transform3D(-0.939095, 0.030222273, 0.34232613, 0, 0.9961255, -0.087942965, -0.34365764, -0.0825868, -0.9354565, 0.85429287, 0.6117928, -2.4833934)
 
+[node name="boom" type="AudioStreamPlayer" parent="Camera3D" unique_id=502981355]
+
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Camera3D" unique_id=1856529281]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8626451e-08, 0, -0.7426234)
 pixel_size = 0.0151
 billboard = 1
-shaded = true
 no_depth_test = true
 fixed_size = true
-alpha_cut = 1
+alpha_cut = 3
 texture_filter = 0
 render_priority = 127
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 script = ExtResource("3_0t82s")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=178197799]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=178197799 groups=["perishable"]]
 environment = SubResource("Environment_ekgp7")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1836003556]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1836003556 groups=["perishable"]]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
